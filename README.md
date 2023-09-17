@@ -7,12 +7,13 @@
 4. Run the containers using `./vendor/bin/sail up -d`
 5. Access the PHP container using `./vendor/bin/sail shell`
 6. Run `composer install` to install of the composer dependencies.
-7. Rename the docker example `.env` file using `cp .env.example .env`
+7. Rename the docker example `.env` file using `cp .env.docker.example .env`
 8. Run `php artisan key:generate` to generate an application key (`APP_KEY`)
 9. Run `php artisan migrate` to run all of the migration
 10. Access the site using `localhost:8000` in your browser
 
 #### Installation (without Docker) 
+0. Install the neccessary software that Laravel, Vue and React require in order to use them (check their documentation respectively)
 1. Clone the repository
 2. Get into your project directory (`cd project-management-system`)
 3. Run `composer install` to install of the composer dependencies.
