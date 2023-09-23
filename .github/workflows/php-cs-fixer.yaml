@@ -1,25 +1,27 @@
-name: Fix PHP Code Styles
+name: php-cs-fixer
 
 on:
+  pull_request:
   push:
     branches:
       - main
-  pull_request:
-    paths:
-      - '**.php'
 
 jobs:
-  phpcs:
+  php-cs-fixer:
     runs-on: ubuntu-latest
-    timeout-minutes: 1
+
+    permissions:
+      # Give the default GITHUB_TOKEN write permission to commit and push the changed files back to the repository.
+      contents: write
+
     steps:
       - uses: actions/checkout@v3
-      - uses: shivammathur/setup-php@v2
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Run php-cs-fixer
+        uses: docker://oskarstark/php-cs-fixer-ga
+
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          php-version: 8.2
-          extensions: dom, curl, mbstring, zip, pcntl, intl
-          coverage: none
-          commit_message: Apply PHP code style fixes
-      - run: composer install --no-interaction --ignore-platform-reqs --no-scripts
-      - run: vendor/bin/php-cs-fixer fix
+          commit_message: Apply php-cs-fixer changes
