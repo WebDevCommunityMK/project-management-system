@@ -1,7 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\MainPlatform\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +19,7 @@ use Inertia\Inertia;
 Route::get('/', function () {
     return Inertia::render('Home');
 });
+
+Route::get('/login', [LoginController::class, 'index'])->name('login-page');
+
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
