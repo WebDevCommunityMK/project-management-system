@@ -18,20 +18,21 @@ class LoginController extends Controller
 
     public function login(LoginRequest $request){
 
-        // validate email and password through LoginRequest
+
+        // // validate email and password through LoginRequest
         $validated = $request->validated();
 
-        // check if user exists
+        // // check if user exists
         if (Auth::attempt($validated)) {
 
-            // Generate session
+        //     // Generate session
             $request->session()->regenerate();
             
-            // redirect to platform`s dashboard page
+        //     // redirect to platform`s dashboard page
             return redirect()->intended('/dashboard');
         }
  
-        // If user does not exist
+        // // If user does not exist
         return back()->withErrors([
             'error' => 'The provided credentials do not match our records.',
         ]);

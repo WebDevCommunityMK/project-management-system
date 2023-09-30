@@ -20,6 +20,8 @@ Route::get('/', function () {
     return Inertia::render('Home');
 });
 
-Route::get('/login', [LoginController::class, 'index'])->name('login-page');
+Route::get('/login', [LoginController::class, 'index'])->name('login.index');
+Route::post('/login', [LoginController::class, 'login'])->name('login');
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
