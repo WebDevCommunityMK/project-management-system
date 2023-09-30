@@ -22,7 +22,7 @@ class LoginController extends Controller
         $validated = $request->validated();
 
         // // check if user exists
-        if (Auth::attempt($validated)) {
+        if (Auth::attempt($validated, $request->only('remember_me'))) {
 
             // Generate session
             $request->session()->regenerate();

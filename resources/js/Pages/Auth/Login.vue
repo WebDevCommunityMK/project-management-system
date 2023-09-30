@@ -25,7 +25,7 @@
                         </div>
                         <div class="flex">
                             <div class="w-1/2">
-                                <input type="checkbox" name="remeberMe">
+                                <input type="checkbox" name="remeber_me" v-model="form.remember_me">
                                 <label for="remeberMe">Remeber me</label>
                             </div>
                             <div class="w-1/2">
@@ -59,7 +59,8 @@ import { Link } from '@inertiajs/vue3'
 
 let form = useForm({
     email: '',
-    password: ''
+    password: '',
+    remember_me: ''
 });
 
 let submit = () => {
