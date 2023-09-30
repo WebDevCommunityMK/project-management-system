@@ -11,6 +11,8 @@
 8. Run `php artisan key:generate` to generate an application key (`APP_KEY`)
 9. Run `php artisan migrate` to run all of the migration
 10. Access the site using `localhost:8000` in your browser
+11. For generating api documentation run `php artisan scribe:generate`
+12. Access to the API Documentation: `localhost/docs`
 
 #### Installation (without Docker) 
 0. Install the neccessary software that Laravel, Vue and React require in order to use them (check their documentation respectively)
@@ -21,4 +23,6 @@
 5. Run `php artisan key:generate` to generate an application key (`APP_KEY`)
 6. Run `php artisan migrate` to run all of the migration
 7. Run `php artisan serve` to start the PHP server.
-8. Access the site using `localhost:8000` in your browser
+8. Access the site using `localhost:8000` in your browser 
+9. For generating api documentation please run `php artisan scribe:generate`
+10. Access to the API Documentation: `localhost:8000/docs`
