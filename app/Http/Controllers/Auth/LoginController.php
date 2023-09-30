@@ -18,13 +18,13 @@ class LoginController extends Controller
 
     public function login(LoginRequest $request){
 
-        // // validate email and password through LoginRequest
+        // validate email and password through LoginRequest
         $validated = $request->validated();
 
         // // check if user exists
         if (Auth::attempt($validated)) {
 
-        //     // Generate session
+            // Generate session
             $request->session()->regenerate();
             
         //     // redirect to platform`s dashboard page
@@ -43,7 +43,7 @@ class LoginController extends Controller
         Auth::logout();
 
         return redirect('/');
-        
+
     }
             
 }
