@@ -60,7 +60,7 @@ import { Link } from '@inertiajs/vue3'
 let form = useForm({
     email: '',
     password: '',
-    remember_me: ''
+    remember_me: false
 });
 
 let submit = () => {
