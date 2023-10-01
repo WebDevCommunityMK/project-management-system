@@ -7,24 +7,24 @@
                         <div>
                             <label class="text-gray-600 font-bold inline-block pb-2" for="name">First Name</label>
                             <input
-                                v-model="form.firstName" 
+                                v-model="form.first_name" 
                                 class="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" 
-                                type="text" name="firstName" 
+                                type="text" name="first_name" 
                                 placeholder="John">
                         </div>
                         <div 
-                            v-if="form.errors.firstName" v-text="form.errors.firstName"
+                            v-if="form.errors.first_name" v-text="form.errors.first_name"
                             class="text-sm text-red-500 py-2"></div>
                         <div>
-                            <label class="text-gray-600 font-bold inline-block pb-2" for="name">Last Name</label>
+                            <label class="text-gray-600 font-bold inline-block pb-2" for="last_name">Last Name</label>
                             <input
-                                v-model="form.lastName" 
+                                v-model="form.last_name" 
                                 class="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" 
-                                type="text" name="lastName" 
+                                type="text" name="last_name" 
                                 placeholder="Doe">
                         </div>
                         <div 
-                            v-if="form.errors.lastName" v-text="form.errors.lastName"
+                            v-if="form.errors.last_name" v-text="form.errors.last_name"
                             class="text-sm text-red-500 py-2"></div>
                         <div>
                             <label class="text-gray-600 font-bold inline-block pb-2" for="email">Email</label>
@@ -86,8 +86,8 @@ import { useForm } from "@inertiajs/vue3";
 import { Link } from '@inertiajs/vue3'
 
 let form = useForm({
-    firstName: '',
-    lastName: '',
+    first_name: '',
+    last_name: '',
     email: '',
     password: '',
     password_confirmation: ''
