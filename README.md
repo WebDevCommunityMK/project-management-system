@@ -11,6 +11,8 @@
 8. Run `php artisan key:generate` to generate an application key (`APP_KEY`)
 9. Run `php artisan migrate` to run all migrations and database seeders
 10. Access the site using `localhost:8000` in your browser
+11. For generating api documentation run `php artisan scribe:generate`
+12. Access to the API Documentation: `localhost/docs`
 
 ### InertiaJs and VueJs instalation
 1. Pull the latest changes from main branch.
@@ -28,7 +30,10 @@
 5. Run `php artisan key:generate` to generate an application key (`APP_KEY`)
 6. Run `php artisan migrate --seed` to run all migrations and database seeders
 7. Run `php artisan serve` to start the PHP server.
-8. Access the site using `localhost:8000` in your browser
+8. Access the site using `localhost:8000` in your browser 
+9. For generating api documentation please run `php artisan scribe:generate`
+10. Access to the API Documentation: `localhost:8000/docs`
+
 
 ### InertiaJs and VueJs instalation
 1. Pull the latest changes from main branch.
@@ -36,3 +41,4 @@
 3. Run `npm install` to install new node dependencies.
 4. Run `npm run dev` or `npm run build`.
 10. Access the site using `localhost:8000` in your browser.
+
