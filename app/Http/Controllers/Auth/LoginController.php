@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use Inertia\Inertia;
+use Inertia\Response;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -11,7 +12,8 @@ use App\Http\Requests\Auth\LoginRequest;
 
 class LoginController extends Controller
 {
-    public function index(){
+    public function index(): Response
+    {
 
         return Inertia::render('Auth/Login');
 

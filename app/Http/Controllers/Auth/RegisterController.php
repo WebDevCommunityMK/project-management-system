@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
 use Inertia\Inertia;
+use Inertia\Response;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\Auth\RegisterRequest;
@@ -14,7 +14,8 @@ use App\Http\Requests\Auth\RegisterRequest;
 
 class RegisterController extends Controller
 {
-    public function index(){
+    public function index(): Response
+    {
 
         return Inertia::render('Auth/Register');
 
