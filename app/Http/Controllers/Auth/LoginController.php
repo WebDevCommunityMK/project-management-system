@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Auth\LoginRequest;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 use Inertia\Response;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\RedirectResponse;
-use App\Http\Requests\Auth\LoginRequest;
 
 class LoginController extends Controller
 {
@@ -30,11 +30,11 @@ class LoginController extends Controller
 
             // Generate session
             $request->session()->regenerate();
-            
-        //     // redirect to platform`s dashboard page
+
+            //     // redirect to platform`s dashboard page
             return redirect()->intended('/dashboard');
         }
- 
+
         // // If user does not exist
         return back()->withErrors([
             'error' => 'The provided credentials do not match our records.',
@@ -48,8 +48,8 @@ class LoginController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
+
         return redirect('/');
 
     }
-            
 }
