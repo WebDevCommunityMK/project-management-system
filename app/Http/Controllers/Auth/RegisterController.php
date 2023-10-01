@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\Auth\RegisterRequest;
+use App\Http\Requests\Auth\Response;
 
 class RegisterController extends Controller
 {
