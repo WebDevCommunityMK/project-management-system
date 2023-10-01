@@ -6,6 +6,7 @@ use Inertia\Inertia;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\Auth\LoginRequest;
 
 class LoginController extends Controller
@@ -16,7 +17,8 @@ class LoginController extends Controller
 
     }
 
-    public function login(LoginRequest $request){
+    public function login(LoginRequest $request): RedirectResponse
+    {
 
         // validate email and password through LoginRequest
         $validated = $request->validated();
