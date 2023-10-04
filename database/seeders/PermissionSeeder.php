@@ -13,22 +13,70 @@ class PermissionSeeder extends Seeder
     public function run(): void
     {
         $permissions = [
-            ['name' => 'create_board'],
-            ['name' => 'edit_board'],
-            ['name' => 'view_board'],
-            ['name' => 'archive_board'],
-            ['name' => 'delete_board'],
-            ['name' => 'create_issue'],
-            ['name' => 'edit_issue'],
-            ['name' => 'view_issue'],
-            ['name' => 'delete_issue'],
-            ['name' => 'assign_issue'],
-            ['name' => 'create_project'],
-            ['name' => 'edit_project'],
-            ['name' => 'view_project'],
-            ['name' => 'delete_project'],
-            ['name' => 'view_reposrt'],
-            ['name' => 'generate_reports'],
+            [
+                'name'  => 'create_board',
+                'label' => 'Create Board'    
+            ],
+            [
+                'name'  => 'edit_board',
+                'label' => 'Edit Board'
+            ],
+            [
+                'name'  => 'view_board',
+                'label' => 'View Board'
+            ],
+            [
+                'name'  => 'archive_board',
+                'label' => 'Archive Board'
+            ],
+            [
+                'name'  => 'delete_board',
+                'label' => 'Delete Board'
+            ],
+            [
+                'name'  => 'create_issue',
+                'label' => 'Create Issue'
+            ],
+            [
+                'name'  => 'edit_issue',
+                'label' => 'Edit Issue'
+            ],
+            [
+                'name'  => 'view_issue',
+                'label' => 'View Issue'
+            ],
+            [
+                'name'  => 'delete_issue',
+                'label' => 'Delete Issue'
+            ],
+            [
+                'name'  => 'assign_issue',
+                'label' => 'Assign Issue'
+            ],
+            [
+                'name'  => 'create_project',
+                'label' => 'Create Project'
+            ],
+            [
+                'name'  => 'edit_project',
+                'label' => 'Edit Project'
+            ],
+            [
+                'name'  => 'view_project',
+                'label' => 'View Project'
+            ],
+            [
+                'name'  => 'delete_project',
+                'label' => 'Delete Project'
+            ],
+            [
+                'name'  => 'view_reports',
+                'label' => 'View Reports'
+            ],
+            [
+                'name'  => 'generate_reports',
+                'label' => 'Generate Reports'
+            ],
         ];
 
         Permission::insert($permissions);
