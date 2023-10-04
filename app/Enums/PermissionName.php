@@ -2,9 +2,8 @@
 
 namespace App\Enums;
 
-
-enum PermissionName: string {
-
+enum PermissionName: string
+{
     case CREATE_BOARD = 'create_board';
     case EDIT_BOARD = 'edit_board';
     case VIEW_BOARD = 'view_board';
