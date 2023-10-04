@@ -19,11 +19,11 @@ class RoleSeeder extends Seeder
             ],
             [
                 'name'  => 'project_owner',
-                'label' => 'Project Owner'
+                'label' => 'Project Owner',
             ],
             [
                 'name'  => 'member',
-                'label' => 'Member'
+                'label' => 'Member',
             ],
         ];
 
