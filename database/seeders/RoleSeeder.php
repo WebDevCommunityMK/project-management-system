@@ -12,6 +12,12 @@ class RoleSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $roles = [
+            ['name' => 'Super Admin'],
+            ['name' => 'Project Owner'],
+            ['name' => 'Member']
+        ];
+
+        Role::insert($roles);
     }
 }
