@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use App\Models\Role;
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class RoleSeeder extends Seeder
 {
@@ -16,7 +15,7 @@ class RoleSeeder extends Seeder
         $roles = [
             ['name' => 'Super Admin'],
             ['name' => 'Project Owner'],
-            ['name' => 'Member']
+            ['name' => 'Member'],
         ];
 
         Role::insert($roles);
