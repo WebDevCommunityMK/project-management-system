@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Role;
 use Inertia\Inertia;
 use App\Enums\RoleName;
 use Illuminate\Support\Facades\Route;
