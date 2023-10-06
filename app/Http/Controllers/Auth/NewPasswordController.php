@@ -15,7 +15,7 @@ use Illuminate\Validation\ValidationException;
 class NewPasswordController extends Controller
 {
     /**
-     * Handle an incoming new password request.
+     * Reset Password
      *
      * @throws \Illuminate\Validation\ValidationException
      */
