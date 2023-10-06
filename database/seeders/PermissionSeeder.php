@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Permission;
+use App\Enums\PermissionName;
 use Illuminate\Database\Seeder;
 
 class PermissionSeeder extends Seeder
@@ -14,68 +15,84 @@ class PermissionSeeder extends Seeder
     {
         $permissions = [
             [
-                'name'  => 'create_board',
-                'label' => 'Create Board',
+                'name'        => PermissionName::CREATE_BOARD->value,
+                'label'       => PermissionName::CREATE_BOARD->label(),
+                'description' => 'The user can create a board.'
             ],
             [
-                'name'  => 'edit_board',
-                'label' => 'Edit Board',
+                'name'         => PermissionName::EDIT_BOARD->value,
+                'label'        => PermissionName::EDIT_BOARD->label(),
+                'description'  => 'The user can edit a board.'
             ],
             [
-                'name'  => 'view_board',
-                'label' => 'View Board',
+                'name'         => PermissionName::VIEW_BOARD->value,
+                'label'        => PermissionName::VIEW_BOARD->label(),
+                'description'  => 'The user can view a board.'
             ],
             [
-                'name'  => 'archive_board',
-                'label' => 'Archive Board',
+                'name'         => PermissionName::ARCHIVE_BOARD->value,
+                'label'        => PermissionName::ARCHIVE_BOARD->label(),
+                'description'  => 'The user can archive a board.'
             ],
             [
-                'name'  => 'delete_board',
-                'label' => 'Delete Board',
+                'name'         => PermissionName::DELETE_BOARD->value,
+                'label'        => PermissionName::DELETE_BOARD->label(),
+                'description'  => 'The user can delete board.'
             ],
             [
-                'name'  => 'create_issue',
-                'label' => 'Create Issue',
+                'name'         => PermissionName::CREATE_ISSUE->value,
+                'label'        => PermissionName::CREATE_ISSUE->label(),
+                'description'  => 'The user can create issue.'
             ],
             [
-                'name'  => 'edit_issue',
-                'label' => 'Edit Issue',
+                'name'         => PermissionName::EDIT_ISSUE->value,
+                'label'        => PermissionName::EDIT_ISSUE->label(),
+                'description'  => 'The user can edit issue.'
             ],
             [
-                'name'  => 'view_issue',
-                'label' => 'View Issue',
+                'name'         => PermissionName::VIEW_ISSUE->value,
+                'label'        => PermissionName::VIEW_ISSUE->label(),
+                'description'  => 'The user can view issue.'
             ],
             [
-                'name'  => 'delete_issue',
-                'label' => 'Delete Issue',
+                'name'         => PermissionName::DELETE_ISSUE->value,
+                'label'        => PermissionName::DELETE_ISSUE->label(),
+                'description'  => 'The user can delete issue.'
             ],
             [
-                'name'  => 'assign_issue',
-                'label' => 'Assign Issue',
+                'name'         => PermissionName::ASSIGN_ISSUE->value,
+                'label'        => PermissionName::ASSIGN_ISSUE->label(),
+                'description'  => 'The user can assign issue.'
             ],
             [
-                'name'  => 'create_project',
-                'label' => 'Create Project',
+                'name'         => PermissionName::CREATE_PROJECT->value,
+                'label'        => PermissionName::CREATE_PROJECT->label(),
+                'description'  => 'The user can create project.'
             ],
             [
-                'name'  => 'edit_project',
-                'label' => 'Edit Project',
+                'name'         => PermissionName::EDIT_PROJECT->value,
+                'label'        => PermissionName::EDIT_PROJECT->label(),
+                'description'  => 'The user can edit a project.'
             ],
             [
-                'name'  => 'view_project',
-                'label' => 'View Project',
+                'name'         => PermissionName::VIEW_PROJECT->value,
+                'label'        => PermissionName::VIEW_PROJECT->label(),
+                'description'  => 'The user can view project.'
             ],
             [
-                'name'  => 'delete_project',
-                'label' => 'Delete Project',
+                'name'         => PermissionName::DELETE_PROJECT->value,
+                'label'        => PermissionName::DELETE_PROJECT->label(),
+                'description'  => 'The user can delete a project.'
             ],
             [
-                'name'  => 'view_reports',
-                'label' => 'View Reports',
+                'name'         => PermissionName::VIEW_REPORTS->value,
+                'label'        => PermissionName::VIEW_REPORTS->label(),
+                'description'  => 'The user can view reports.'
             ],
             [
-                'name'  => 'generate_reports',
-                'label' => 'Generate Reports',
+                'name'         => PermissionName::GENERATE_REPORTS->value,
+                'label'        => PermissionName::GENERATE_REPORTS->label(),
+                'description'  => 'The user can generate reports.'
             ],
         ];
 

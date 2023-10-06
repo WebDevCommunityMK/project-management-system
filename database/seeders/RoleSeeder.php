@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Role;
+use App\Enums\RoleName;
 use Illuminate\Database\Seeder;
 
 class RoleSeeder extends Seeder
@@ -14,16 +15,24 @@ class RoleSeeder extends Seeder
     {
         $roles = [
             [
-                'name'  => 'super_admin',
-                'label' => 'Super Admin',
+                'name'        => RoleName::SUPER_ADMIN->value,
+                'label'       => RoleName::SUPER_ADMIN->label(),
+                'description' => 'Super admin has full control ovr the platform.'
             ],
             [
-                'name'  => 'project_owner',
-                'label' => 'Project Owner',
+                'name'        => RoleName::TEAM_LEADER->value,
+                'label'       => RoleName::TEAM_LEADER->label(),
+                'description' => 'Team leader has control over his/hers team and projects specified to his/hers team.'
             ],
             [
-                'name'  => 'member',
-                'label' => 'Member',
+                'name'        => RoleName::PROJECT_OWNER->value,
+                'label'       => RoleName::PROJECT_OWNER->label(),
+                'description' => 'Project owner is a member who own/\'s the project (Project Manager).'
+            ],
+            [
+                'name'        => RoleName::MEMBER->value,
+                'label'       => RoleName::MEMBER->label(),
+                'description' => 'A member of a platform.'
             ],
         ];
 
