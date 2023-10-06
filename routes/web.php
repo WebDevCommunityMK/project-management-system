@@ -21,10 +21,6 @@ Route::get('/', function () {
     return Inertia::render('Home');
 });
 
-Route::get('/token', function () {
-    return csrf_token();
-});
-
 Route::get('/register', [RegisterController::class, 'index'])->name('register.index');
 Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
 Route::get('/login', [LoginController::class, 'index'])->name('login.index');
