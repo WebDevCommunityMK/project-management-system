@@ -39,4 +39,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/forgot-password', [App\Http\Controllers\Auth\PasswordResetLinkController::class, 'store'])
         ->name('password.email');
 
+    //TODO: implement logic for get routes (frontend)
+    // follow docs: https://laravel.com/docs/10.x/passwords#model-preparation
+
 });
