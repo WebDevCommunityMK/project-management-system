@@ -21,6 +21,10 @@ Route::get('/', function () {
     return Inertia::render('Home');
 });
 
+Route::get('/token', function () {
+    return csrf_token();
+});
+
 Route::get('/register', [RegisterController::class, 'index'])->name('register.index');
 Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
 Route::get('/login', [LoginController::class, 'index'])->name('login.index');
@@ -30,5 +34,9 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout')->midd
 Route::middleware('auth')->group(function () {
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::post('/reset-password', [App\Http\Controllers\Auth\NewPasswordController::class, 'store'])
+        ->name('password.reset');
+    Route::post('/forgot-password', [App\Http\Controllers\Auth\PasswordResetLinkController::class, 'store'])
+        ->name('password.email');
 
 });
