@@ -45,7 +45,8 @@
                             <Link 
                                 href="/register"
                                 class="bg-white w-full py-2 rounded-md text-center text-[#4F46E5] font-bold cursor-pointer border hover:border-[#4F46E5]" 
-                                >Sign Up</Link>
+                                >Sign Up
+                            </Link>
                         </div>
                     </div>
                 </form>
@@ -55,7 +56,6 @@
 
 <script setup>
 import { useForm } from "@inertiajs/vue3";
-import { Link } from '@inertiajs/vue3'
 
 let form = useForm({
     email: '',
