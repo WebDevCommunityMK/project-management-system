@@ -19,7 +19,6 @@ class PasswordResetLinkController extends Controller
             $request->only('email')
         );
 
-
         return $status == Password::RESET_LINK_SENT
             ? response()->json(['status' => __($status)])
             : response()->json(['error' => __($status)]);
