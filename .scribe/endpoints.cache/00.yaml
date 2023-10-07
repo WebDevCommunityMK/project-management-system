@@ -46,45 +46,6 @@ endpoints:
     custom: []
   -
     httpMethods:
-      - GET
-    uri: api/user
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
       - POST
     uri: api/reset-password
     metadata:
@@ -108,7 +69,7 @@ endpoints:
         name: token
         description: ''
         required: true
-        example: in
+        example: consectetur
         type: string
         enumValues: []
         custom: []
@@ -116,7 +77,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: jakayla10@example.net
+        example: noah31@example.net
         type: string
         enumValues: []
         custom: []
@@ -124,22 +85,24 @@ endpoints:
         name: password
         description: 'Must be at least 6 characters.'
         required: true
-        example: 'E''6`zpcjpy37\-cw%K.9'
+        example: '{;aKHTU!2'
         type: string
         enumValues: []
         custom: []
     cleanBodyParameters:
-      token: in
-      email: jakayla10@example.net
-      password: 'E''6`zpcjpy37\-cw%K.9'
+      token: consectetur
+      email: noah31@example.net
+      password: '{;aKHTU!2'
     fileParameters: []
     responses:
       -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
+        status: 422
+        content: '{"message":"The password field confirmation does not match.","errors":{"password":["The password field confirmation does not match."]}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '58'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -174,12 +137,53 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: fokon@example.org
+        example: brenden04@example.com
         type: string
         enumValues: []
         custom: []
     cleanBodyParameters:
-      email: fokon@example.org
+      email: brenden04@example.com
+    fileParameters: []
+    responses:
+      -
+        status: 422
+        content: '{"message":"The selected email is invalid.","errors":{"email":["The selected email is invalid."]}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '57'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/user
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
     fileParameters: []
     responses:
       -

@@ -41,6 +41,110 @@ paths:
       tags:
         - Endpoints
       security: []
+  /api/reset-password:
+    post:
+      summary: 'Reset Password.'
+      operationId: resetPassword
+      description: ''
+      parameters: []
+      responses:
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'The password field confirmation does not match.'
+                  errors:
+                    password:
+                      - 'The password field confirmation does not match.'
+                properties:
+                  message:
+                    type: string
+                    example: 'The password field confirmation does not match.'
+                  errors:
+                    type: object
+                    properties:
+                      password:
+                        type: array
+                        example:
+                          - 'The password field confirmation does not match.'
+                        items:
+                          type: string
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                token:
+                  type: string
+                  description: ''
+                  example: consectetur
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: noah31@example.net
+                password:
+                  type: string
+                  description: 'Must be at least 6 characters.'
+                  example: '{;aKHTU!2'
+              required:
+                - token
+                - email
+                - password
+      security: []
+  /api/forgot-password:
+    post:
+      summary: 'Send Password Reset Link.'
+      operationId: sendPasswordResetLink
+      description: ''
+      parameters: []
+      responses:
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'The selected email is invalid.'
+                  errors:
+                    email:
+                      - 'The selected email is invalid.'
+                properties:
+                  message:
+                    type: string
+                    example: 'The selected email is invalid.'
+                  errors:
+                    type: object
+                    properties:
+                      email:
+                        type: array
+                        example:
+                          - 'The selected email is invalid.'
+                        items:
+                          type: string
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: brenden04@example.com
+              required:
+                - email
+      security: []
   /api/user:
     get:
       summary: ''
@@ -62,86 +166,6 @@ paths:
                     example: Unauthenticated.
       tags:
         - Endpoints
-      security: []
-  /api/reset-password:
-    post:
-      summary: 'Reset Password.'
-      operationId: resetPassword
-      description: ''
-      parameters: []
-      responses:
-        401:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: Unauthenticated.
-                properties:
-                  message:
-                    type: string
-                    example: Unauthenticated.
-      tags:
-        - Endpoints
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                token:
-                  type: string
-                  description: ''
-                  example: in
-                email:
-                  type: string
-                  description: 'Must be a valid email address.'
-                  example: jakayla10@example.net
-                password:
-                  type: string
-                  description: 'Must be at least 6 characters.'
-                  example: 'E''6`zpcjpy37\-cw%K.9'
-              required:
-                - token
-                - email
-                - password
-      security: []
-  /api/forgot-password:
-    post:
-      summary: 'Send Password Reset Link.'
-      operationId: sendPasswordResetLink
-      description: ''
-      parameters: []
-      responses:
-        401:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: Unauthenticated.
-                properties:
-                  message:
-                    type: string
-                    example: Unauthenticated.
-      tags:
-        - Endpoints
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                email:
-                  type: string
-                  description: 'Must be a valid email address.'
-                  example: fokon@example.org
-              required:
-                - email
       security: []
 tags:
   -
