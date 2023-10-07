@@ -24,6 +24,9 @@ Route::get('/healthcheck', function () {
     ];
 });
 
+Route::post('/reset-password', [App\Http\Controllers\Auth\NewPasswordController::class, 'store']);
+Route::post('/forgot-password', [App\Http\Controllers\Auth\PasswordResetLinkController::class, 'store']);
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
