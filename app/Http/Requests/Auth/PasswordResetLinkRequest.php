@@ -25,7 +25,7 @@ class PasswordResetLinkRequest extends FormRequest
             'email' => [
                 'required',
                 'email',
-                'exists:users,email'
+                'exists:users,email',
             ],
         ];
     }
