@@ -28,14 +28,5 @@ Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');
 
 Route::middleware('auth')->group(function () {
-
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    Route::post('/reset-password', [App\Http\Controllers\Auth\NewPasswordController::class, 'store'])
-        ->name('password.reset');
-    Route::post('/forgot-password', [App\Http\Controllers\Auth\PasswordResetLinkController::class, 'store'])
-        ->name('password.email');
-
-    //TODO: implement logic for get routes (frontend)
-    // follow docs: https://laravel.com/docs/10.x/passwords#model-preparation
-
 });
