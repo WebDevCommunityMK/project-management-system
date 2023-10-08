@@ -2,9 +2,9 @@
 
 namespace App\Http\Middleware;
 
-use Inertia\Middleware;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Inertia\Middleware;
 
 class HandleInertiaRequests extends Middleware
 {
@@ -42,8 +42,8 @@ class HandleInertiaRequests extends Middleware
                     'user' => [
                         'first_name' => Auth::user()->first_name ?? null,
                         'last_name' => Auth::user()->last_name ?? null,
-                    ]
-                ]
+                    ],
+                ],
         ]);
     }
 }
