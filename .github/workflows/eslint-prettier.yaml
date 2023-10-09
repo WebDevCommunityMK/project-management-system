@@ -1,6 +1,7 @@
 name: ESLint and Prettier Fixes
 
 on:
+  workflow_dispatch:
   pull_request:
   push:
     branches:
