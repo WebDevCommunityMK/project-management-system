@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+
 use App\Models\User;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -44,5 +45,6 @@ class NewPasswordController extends Controller
         return $status === Password::PASSWORD_RESET
                     ? redirect()->route('login')->with('status', __($status))
                     : back()->withErrors(['email' => [__($status)]]);
+
     }
 }
