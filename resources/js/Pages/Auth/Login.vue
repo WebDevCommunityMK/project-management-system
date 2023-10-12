@@ -30,7 +30,7 @@
                             </div>
                             <div class="w-1/2">
                                 <Link 
-                                    href="/reset-password"
+                                    href="/forgot-password"
                                     class="font-bold text-blue-600"
                                     >
                                     Forgot password ?

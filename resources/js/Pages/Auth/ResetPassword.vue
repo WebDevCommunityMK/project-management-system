@@ -14,7 +14,7 @@
                             <div v-if="form.errors.email" class="text-sm text-red-500 py-2">{{ form.errors.email }}</div>    
                         </div>
                         <div>
-                            <label class="text-gray-600 font-bold inline-block pb-2" for="password">Password</label>
+                            <label class="text-gray-600 font-bold inline-block pb-2" for="password">New Password</label>
                             <input 
                                 v-model="form.password"
                                 class="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" 
@@ -47,16 +47,28 @@
 
 <script setup>
 import { useForm } from "@inertiajs/vue3";
-import { Link } from '@inertiajs/vue3'
+
+
+const props = defineProps({
+    token: String,
+    email: String,
+
+});
+
 
 let form = useForm({
-    email: '',
+    token:props.token,
+    email: props.email,
     password: '',
     password_confirmation: '',
 });
 
-let submit = () => {
-    form.post('/forgot-password')
+const submit = () => {
+    form.post('/reset-password', {
+        onFinish: () => {
+            form.reset('password', 'password_confirmation');
+        },
+    });
 };
 
 </script>
