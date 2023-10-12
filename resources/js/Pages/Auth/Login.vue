@@ -51,14 +51,13 @@
                                 />
                                 <label for="remeberMe">Remeber me</label>
                             </div>
-
+                            <div class="w-1/2">
                                 <Link 
                                     href="/forgot-password"
                                     class="font-bold text-blue-600"
                                     >
                                     Forgot password ?
                                 </Link>
-
                             </div>
                         </div>
                         <div>
