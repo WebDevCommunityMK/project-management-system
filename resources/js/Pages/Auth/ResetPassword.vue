@@ -9,7 +9,7 @@
                                 <label class="text-gray-600 font-bold inline-block pb-2" for="email">Email</label>
                                 <input
                                     v-model="form.email" 
-                                    class="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" 
+                                    class="border border-gray-600 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" 
                                     type="email" name="email" 
                                     placeholder="example@mail.com">
                                 <div v-if="form.errors.email" class="text-sm text-red-500 py-2">{{ form.errors.email }}</div>    
