@@ -2,19 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\RoleName;
+use App\Http\Requests\Team\NewTeamRequest;
 use App\Models\Role;
 use App\Models\Team;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 use Inertia\Response;
-use App\Enums\RoleName;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\RedirectResponse;
-use App\Http\Requests\Team\NewTeamRequest;
 
 class NewTeamController extends Controller
 {
-
     public function index(): Response
     {
         return Inertia::render('Auth/NewTeam');
@@ -26,8 +24,8 @@ class NewTeamController extends Controller
 
         // check if there is a logo/image attached to the form
         // (logo is not required, it can be set afterwards on the team profile page)
-        if($request->logo){
-            
+        if ($request->logo) {
+
             $path = public_path('logos/');
 
             // if directory logos does not exists, we create one
@@ -43,8 +41,8 @@ class NewTeamController extends Controller
 
         $team = new Team();
         $team->name = $request->name;
-        
-        if($request->logo && $logoName){
+
+        if ($request->logo && $logoName) {
             $team->logo = $logoName;
         }
 
