@@ -57,6 +57,10 @@ class NewTeamController extends Controller
         // to the pivot table [team_id, user_id, role_id]
         $team->users()->attach(Auth::user(), ['role_id' => $role->id]);
 
+        // then we send welcome email to the registered user
+        // mail server should be configured, until then this is not executing
+        // Mail::to(Auth::user())->send(new WelcomeEmail());
+
         return redirect()->route('dashboard');
     }
 }
