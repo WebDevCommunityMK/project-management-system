@@ -10,11 +10,6 @@
                         class="bg-white shadow-xl p-10 flex flex-col gap-4 text-sm"
                     >
                         <div>
-                            <div
-                                v-if="form.errors.error"
-                                v-text="form.errors.error"
-                                class="text-sm text-red-500 py-2"
-                            ></div>
                             <label
                                 class="text-gray-600 font-bold inline-block pb-2"
                                 for="name"
@@ -27,6 +22,11 @@
                                 name="team_name"
                                 placeholder="My Team ..."
                             />
+                            <div
+                            v-if="form.errors.name"
+                            v-text="form.errors.name"
+                            class="text-sm text-red-500 py-2"
+                        ></div>
                         </div>
                         <div>
                             <label
@@ -35,11 +35,16 @@
                                 >Team Logo</label
                             >
                             <input
-                                v-on:change="form.team_logo"
+                                @input="form.logo = $event.target.files[0]"
                                 class="w-full shadow-sm py-2"
                                 type="file"
                                 name="logo"
                             />
+                            <div
+                            v-if="form.errors.logo"
+                            v-text="form.errors.logo"
+                            class="text-sm text-red-500 py-2"
+                        ></div>
                         </div>
                         <div>
                             <input

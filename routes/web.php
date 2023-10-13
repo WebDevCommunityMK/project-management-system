@@ -29,6 +29,7 @@ Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');
 
 Route::middleware('auth')->group(function () {
+    Route::get('/register/new-team', [NewTeamController::class, 'index'])->name('new_team');
     Route::post('/create-new-team', [NewTeamController::class, 'create'])->name('new_team.create');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
