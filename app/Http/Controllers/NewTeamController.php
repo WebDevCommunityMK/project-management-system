@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Team;
 use Inertia\Inertia;
 use Inertia\Response;
 use Illuminate\Http\Request;
@@ -19,9 +20,12 @@ class NewTeamController extends Controller
     {
         $validated = $request->validated();
 
+        // check if there is a logo/image attached to the form
+        // (logo is not required, it can be set afterwards on the team profile page)
         if($request->logo){
             
             $path = public_path('logos/');
+            
             // if directory logos does not exists, we create one
             !is_dir($path) && mkdir($path, 0777, true);
 
@@ -33,13 +37,15 @@ class NewTeamController extends Controller
 
         }
 
+        $team = new Team();
+        $team->name = $request->name;
         
+        if($request->logo && $logoName){
+            $team->logo = $logoName;
+        }
 
+        $team->save();
 
-        // $image       = new Image();
-        // $image->name = $imageName;
-        // $image->save();
-
-        // return redirect('/dashboard');
+        return redirect()->route('dashboard');
     }
 }
