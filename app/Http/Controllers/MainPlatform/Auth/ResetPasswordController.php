@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\MainPlatform\Auth;
 
-use Inertia\Inertia;
-use Inertia\Response;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
+use Inertia\Inertia;
+use Inertia\Response;
 
 class ResetPasswordController extends Controller
 {

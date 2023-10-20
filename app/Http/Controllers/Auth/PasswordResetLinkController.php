@@ -3,12 +3,12 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Password;
 use App\Http\Requests\Auth\PasswordResetLinkRequest;
+use Illuminate\Support\Facades\Password;
 
 class PasswordResetLinkController extends Controller
 {
-     /**
+    /**
      * Send Password Reset Link.
      *
      * @throws \Illuminate\Validation\ValidationException
