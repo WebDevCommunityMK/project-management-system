@@ -1,14 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\MainPlatform\Auth;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\PasswordResetLinkRequest;
 use Illuminate\Support\Facades\Password;
+use App\Http\Requests\Auth\PasswordResetLinkRequest;
 
 class PasswordResetLinkController extends Controller
 {
-    /**
+     /**
      * Send Password Reset Link.
      *
      * @throws \Illuminate\Validation\ValidationException

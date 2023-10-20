@@ -1,12 +1,12 @@
 <?php
 
-use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Auth\NewPasswordController;
-use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\Auth\ResetPasswordController;
-use App\Http\Controllers\MainPlatform\DashboardController;
-use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\MainPlatform\DashboardController;
+use App\Http\Controllers\MainPlatform\Auth\NewPasswordController;
+use App\Http\Controllers\MainPlatform\Auth\ResetPasswordController;
 
 /*
 |--------------------------------------------------------------------------
