@@ -2,19 +2,18 @@
 
 namespace App\Http\Controllers\MainPlatform\Team;
 
+use App\Enums\RoleName;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Team\NewTeamRequest;
+use App\Mail\MainPlatform\WelcomeEmail;
 use App\Models\Role;
 use App\Models\Team;
-use Inertia\Inertia;
-use Inertia\Response;
-use App\Enums\RoleName;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Http\RedirectResponse;
-use App\Mail\MainPlatform\WelcomeEmail;
 use Illuminate\Support\Facades\Storage;
-use App\Http\Requests\Team\NewTeamRequest;
+use Inertia\Inertia;
+use Inertia\Response;
 
 class NewTeamController extends Controller
 {
@@ -34,7 +33,7 @@ class NewTeamController extends Controller
             $logo = Storage::putFile('/logos', $request->logo);
             $team->logo = $logo;
         }
-        
+
         $team->name = $request->name;
 
         $team->save();
@@ -49,9 +48,9 @@ class NewTeamController extends Controller
         // creating $data array for the welcome email
         $data = [
             'name' => Auth::user()->first_name . ' ' . Auth::user()->last_name,
-            'team' => $team->name
+            'team' => $team->name,
         ];
-        
+
         // send the welcome email
         Mail::to(Auth::user()->email)->send(new WelcomeEmail($data));
 

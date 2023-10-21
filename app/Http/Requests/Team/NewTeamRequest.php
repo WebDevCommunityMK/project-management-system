@@ -26,7 +26,7 @@ class NewTeamRequest extends FormRequest
                 'required',
                 'string',
                 'unique:teams',
-                'max:150'
+                'max:150',
 
             ],
 
@@ -36,7 +36,7 @@ class NewTeamRequest extends FormRequest
                 'image',
                 'mimes:jpg,png,jpeg,gif,svg',
                 'dimensions:min_width=100,min_height=40,max_width=1000,max_height=400',
-                'max:1024'
+                'max:1024',
             ],
         ];
     }
