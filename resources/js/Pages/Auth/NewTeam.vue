@@ -23,10 +23,10 @@
                                 placeholder="My Team ..."
                             />
                             <div
-                            v-if="form.errors.name"
-                            v-text="form.errors.name"
-                            class="text-sm text-red-500 py-2"
-                        ></div>
+                                v-if="form.errors.name"
+                                v-text="form.errors.name"
+                                class="text-sm text-red-500 py-2"
+                            ></div>
                         </div>
                         <div>
                             <label
@@ -35,16 +35,16 @@
                                 >Team Logo</label
                             >
                             <input
-                                @input="form.logo = $event.target.files[0]"
+                                v-on:change="form.logo = $event.target.files[0]"
                                 class="w-full shadow-sm py-2"
                                 type="file"
-                                name="logo"
+                                name="team_logo"
                             />
                             <div
-                            v-if="form.errors.logo"
-                            v-text="form.errors.logo"
-                            class="text-sm text-red-500 py-2"
-                        ></div>
+                                v-if="form.errors.logo"
+                                v-text="form.errors.logo"
+                                class="text-sm text-red-500 py-2"
+                            ></div>
                         </div>
                         <div>
                             <input
@@ -69,7 +69,7 @@ let form = useForm({
 });
 
 let submit = () => {
-    form.post('/create-new-team');
+    form.post('/register/new-team');
 };
 </script>
 

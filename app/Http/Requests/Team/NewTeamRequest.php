@@ -22,7 +22,22 @@ class NewTeamRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required'],
+            'name' => [
+                'required',
+                'string',
+                'unique:teams',
+                'max:150'
+
+            ],
+
+            'logo' => [
+                'nullable',
+                'file',
+                'image',
+                'mimes:jpg,png,jpeg,gif,svg',
+                'dimensions:min_width=100,min_height=40,max_width=1000,max_height=400',
+                'max:1024'
+            ],
         ];
     }
 }

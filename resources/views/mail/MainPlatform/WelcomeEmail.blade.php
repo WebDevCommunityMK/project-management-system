@@ -1,0 +1,1 @@
+Dear {{ $data['name'] }}, welcome. Your team - {{ $data['team'] }}

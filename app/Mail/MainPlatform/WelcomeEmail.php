@@ -1,23 +1,27 @@
 <?php
 
-namespace App\Mail;
+namespace App\Mail\MainPlatform;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
+use Illuminate\Mail\Mailables\Address;
 use Illuminate\Mail\Mailables\Content;
-use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Mail\Mailables\Envelope;
+use Illuminate\Contracts\Queue\ShouldQueue;
 
 class WelcomeEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $data;
+
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct($data)
     {
-
+        $this->data = $data;
     }
 
     /**
@@ -26,6 +30,7 @@ class WelcomeEmail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
+            from: new Address('welcome@projectmanagementapp.com', 'Project Management App Team'),
             subject: 'Welcome Email',
         );
     }
@@ -36,7 +41,8 @@ class WelcomeEmail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'emails.WelcomeEmail',
+            view: 'mail.MainPlatform.WelcomeEmail',
+            with: ['data' => $this->data]
         );
     }
 
