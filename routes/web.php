@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\MainPlatform\DashboardController;
+use App\Http\Controllers\MainPlatform\Team\NewTeamController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -28,5 +29,7 @@ Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');
 
 Route::middleware('auth')->group(function () {
+    Route::get('/register/new-team', [NewTeamController::class, 'index'])->name('new-team.index');
+    Route::post('/register/new-team', [NewTeamController::class, 'store'])->name('new-team.store');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
