@@ -16,11 +16,10 @@
 <script setup></script>
 
 <script>
-import Layout from './Layouts/HomePageLayout.vue'
+import Layout from './Layouts/HomePageLayout.vue';
 
 export default {
-  layout: (h, page) => h(Layout, [page]),
-  layout: Layout,
-}
+    layout: (h, page) => h(Layout, [page]),
+    layout: Layout,
+};
 </script>
-

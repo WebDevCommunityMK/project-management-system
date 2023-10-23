@@ -1,5 +1,1 @@
-<template>
-
-    main content of the dashboard goes here
-
-</template>
+<template>main content of the dashboard goes here</template>

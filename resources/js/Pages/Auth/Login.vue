@@ -52,10 +52,10 @@
                                 <label for="remeberMe">Remeber me</label>
                             </div>
                             <div class="w-1/2">
-                                <Link 
+                                <Link
                                     href="/forgot-password"
                                     class="font-bold text-blue-600"
-                                    >
+                                >
                                     Forgot password ?
                                 </Link>
                             </div>
@@ -99,10 +99,10 @@ let submit = () => {
 </script>
 
 <script>
-import Layout from './Layouts/Layout.vue'
+import Layout from './Layouts/Layout.vue';
 
 export default {
-  layout: (h, page) => h(Layout, [page]),
-  layout: Layout,
-}
+    layout: (h, page) => h(Layout, [page]),
+    layout: Layout,
+};
 </script>

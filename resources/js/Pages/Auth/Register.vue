@@ -146,10 +146,10 @@ let submit = () => {
 </script>
 
 <script>
-import Layout from './Layouts/Layout.vue'
+import Layout from './Layouts/Layout.vue';
 
 export default {
-  layout: (h, page) => h(Layout, [page]),
-  layout: Layout,
-}
+    layout: (h, page) => h(Layout, [page]),
+    layout: Layout,
+};
 </script>
