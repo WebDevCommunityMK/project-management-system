@@ -1,13 +1,15 @@
 <?php
 
+use Inertia\Inertia;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\MainPlatform\Auth\NewPasswordController;
-use App\Http\Controllers\MainPlatform\Auth\ResetPasswordController;
+use App\Http\Controllers\MainPlatform\ProfileController;
 use App\Http\Controllers\MainPlatform\DashboardController;
 use App\Http\Controllers\MainPlatform\Team\NewTeamController;
-use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
+use App\Http\Controllers\MainPlatform\Auth\PasswordController;
+use App\Http\Controllers\MainPlatform\Auth\NewPasswordController;
+use App\Http\Controllers\MainPlatform\Auth\ResetPasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,4 +42,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/register/new-team', [NewTeamController::class, 'index'])->name('new-team.index');
     Route::post('/register/new-team', [NewTeamController::class, 'store'])->name('new-team.store');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::put('/password', [PasswordController::class, 'update'])->name('password.update');
 });
