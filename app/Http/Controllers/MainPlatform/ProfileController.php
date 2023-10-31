@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers\MainPlatform;
 
+use App\Http\Controllers\Controller;
+use App\Http\Requests\MainPlatform\ProfileUpdateRequest;
 use App\Models\User;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 use Inertia\Response;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Redirect;
-use App\Http\Requests\MainPlatform\ProfileUpdateRequest;
 
 class ProfileController extends Controller
 {
-     /**
+    /**
      * Display the user's profile form.
      */
     public function edit(User $user): Response
@@ -25,7 +25,7 @@ class ProfileController extends Controller
         ]);
     }
 
-       /**
+    /**
      * Update the user's profile information.
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
@@ -40,7 +40,8 @@ class ProfileController extends Controller
 
         return Redirect::route('profile.edit');
     }
-     /**
+
+    /**
      * Delete the user's account.
      */
     public function destroy(Request $request): RedirectResponse
