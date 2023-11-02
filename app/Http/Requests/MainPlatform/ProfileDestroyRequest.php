@@ -23,7 +23,7 @@ class ProfileDestroyRequest extends FormRequest
     {
         return [
             'password' => [
-                'required', 
+                'required',
                 'current_password',
             ],
         ];
