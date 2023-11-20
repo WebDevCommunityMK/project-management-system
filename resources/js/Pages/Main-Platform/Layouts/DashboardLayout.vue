@@ -34,12 +34,19 @@
                     v-if="showSettings"
                     class="absolute border bg-[#044E54] flex flex-col gap-5 text-[#E0FCFF] p-3 rounded mt-3"
                 >
-                    <Link href="#">Link 1</Link>
+                    <Link href="/profile" method="get" as="button"
+                        >Profile</Link
+                    >
                     <Link href="#">Link 2</Link>
                     <Link href="#">Link 3</Link>
                 </div>
             </span>
-            <Link href="/logout" method="post" class="flex items-center">
+            <Link
+                href="/logout"
+                method="post"
+                as="button"
+                class="flex items-center"
+            >
                 <span class="pr-3"> Logout </span>
                 <span>
                     <svg
