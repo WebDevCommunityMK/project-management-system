@@ -67,7 +67,7 @@ endpoints:
         name: token
         description: ''
         required: true
-        example: consectetur
+        example: sed
         type: string
         enumValues: []
         custom: []
@@ -75,7 +75,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: noah31@example.net
+        example: gussie93@example.org
         type: string
         enumValues: []
         custom: []
@@ -83,14 +83,14 @@ endpoints:
         name: password
         description: 'Must be at least 6 characters.'
         required: true
-        example: '{;aKHTU!2'
+        example: '-V0sqCYV_$X5|.2">4'
         type: string
         enumValues: []
         custom: []
     cleanBodyParameters:
-      token: consectetur
-      email: noah31@example.net
-      password: '{;aKHTU!2'
+      token: sed
+      email: gussie93@example.org
+      password: '-V0sqCYV_$X5|.2">4'
     fileParameters: []
     responses:
       -
@@ -135,12 +135,12 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: brenden04@example.com
+        example: lang.lance@example.com
         type: string
         enumValues: []
         custom: []
     cleanBodyParameters:
-      email: brenden04@example.com
+      email: lang.lance@example.com
     fileParameters: []
     responses:
       -
@@ -151,6 +151,65 @@ endpoints:
           content-type: application/json
           x-ratelimit-limit: '60'
           x-ratelimit-remaining: '57'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/admin/login
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: ''
+        required: true
+        example: blarson@example.com
+        type: string
+        enumValues: []
+        custom: []
+      password:
+        name: password
+        description: ''
+        required: true
+        example: '\Qp[dJsa81c:\!s)'
+        type: string
+        enumValues: []
+        custom: []
+    cleanBodyParameters:
+      email: blarson@example.com
+      password: '\Qp[dJsa81c:\!s)'
+    fileParameters: []
+    responses:
+      -
+        status: 422
+        content: '{"message":"These credentials do not match our records.","errors":{"email":["These credentials do not match our records."]}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '56'
           access-control-allow-origin: '*'
         description: null
         custom: []

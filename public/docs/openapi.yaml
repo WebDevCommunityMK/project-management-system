@@ -84,15 +84,15 @@ paths:
                 token:
                   type: string
                   description: ''
-                  example: consectetur
+                  example: sed
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: noah31@example.net
+                  example: gussie93@example.org
                 password:
                   type: string
                   description: 'Must be at least 6 characters.'
-                  example: '{;aKHTU!2'
+                  example: '-V0sqCYV_$X5|.2">4'
               required:
                 - token
                 - email
@@ -141,9 +141,61 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: brenden04@example.com
+                  example: lang.lance@example.com
               required:
                 - email
+      security: []
+  /api/admin/login:
+    post:
+      summary: ''
+      operationId: postApiAdminLogin
+      description: ''
+      parameters: []
+      responses:
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'These credentials do not match our records.'
+                  errors:
+                    email:
+                      - 'These credentials do not match our records.'
+                properties:
+                  message:
+                    type: string
+                    example: 'These credentials do not match our records.'
+                  errors:
+                    type: object
+                    properties:
+                      email:
+                        type: array
+                        example:
+                          - 'These credentials do not match our records.'
+                        items:
+                          type: string
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: ''
+                  example: blarson@example.com
+                password:
+                  type: string
+                  description: ''
+                  example: '\Qp[dJsa81c:\!s)'
+              required:
+                - email
+                - password
       security: []
   /api/user:
     get:

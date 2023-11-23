@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Project Management System",
-        "_postman_id": "77c3a0df-a626-4d80-8736-948d5702ae4b",
+        "_postman_id": "c1fdf8df-430c-433d-ab0b-5e53055db39f",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -97,7 +97,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"token\":\"consectetur\",\"email\":\"noah31@example.net\",\"password\":\"{;aKHTU!2\"}"
+                            "raw": "{\"token\":\"sed\",\"email\":\"gussie93@example.org\",\"password\":\"-V0sqCYV_$X5|.2\\\">4\"}"
                         },
                         "description": "",
                         "auth": {
@@ -156,7 +156,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"brenden04@example.com\"}"
+                            "raw": "{\"email\":\"lang.lance@example.com\"}"
                         },
                         "description": "",
                         "auth": {
@@ -189,6 +189,65 @@
                             ],
                             "code": 422,
                             "body": "{\"message\":\"The selected email is invalid.\",\"errors\":{\"email\":[\"The selected email is invalid.\"]}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/admin\/login",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/admin\/login",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/admin\/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"blarson@example.com\",\"password\":\"\\\\Qp[dJsa81c:\\\\!s)\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "56"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 422,
+                            "body": "{\"message\":\"These credentials do not match our records.\",\"errors\":{\"email\":[\"These credentials do not match our records.\"]}}",
                             "name": ""
                         }
                     ]
