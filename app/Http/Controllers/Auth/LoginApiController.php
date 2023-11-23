@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\LoginRequest;
 
-
 class LoginApiController extends Controller
 {
     public function login(LoginRequest $request)
