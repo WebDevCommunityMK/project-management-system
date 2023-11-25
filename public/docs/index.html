@@ -80,6 +80,9 @@
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-POSTapi-forgot-password">
                                 <a href="#endpoints-POSTapi-forgot-password">Send Password Reset Link.</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-admin-login">
+                                <a href="#endpoints-POSTapi-admin-login">POST api/admin/login</a>
+                            </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GETapi-user">
                                 <a href="#endpoints-GETapi-user">GET api/user</a>
                             </li>
@@ -94,7 +97,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: October 7, 2023</li>
+        <li>Last updated: November 23, 2023</li>
     </ul>
 </div>
 
@@ -263,9 +266,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"token\": \"consectetur\",
-    \"email\": \"noah31@example.net\",
-    \"password\": \"{;aKHTU!2\"
+    \"token\": \"sed\",
+    \"email\": \"gussie93@example.org\",
+    \"password\": \"-V0sqCYV_$X5|.2\\\"&gt;4\"
 }"
 </code></pre></div>
 
@@ -281,9 +284,9 @@ const headers = {
 };
 
 let body = {
-    "token": "consectetur",
-    "email": "noah31@example.net",
-    "password": "{;aKHTU!2"
+    "token": "sed",
+    "email": "gussie93@example.org",
+    "password": "-V0sqCYV_$X5|.2\"&gt;4"
 };
 
 fetch(url, {
@@ -395,10 +398,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="token"                data-endpoint="POSTapi-reset-password"
-               value="consectetur"
+               value="sed"
                data-component="body">
     <br>
-<p>Example: <code>consectetur</code></p>
+<p>Example: <code>sed</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -406,10 +409,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-reset-password"
-               value="noah31@example.net"
+               value="gussie93@example.org"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>noah31@example.net</code></p>
+<p>Must be a valid email address. Example: <code>gussie93@example.org</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -417,10 +420,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-reset-password"
-               value="{;aKHTU!2"
+               value="-V0sqCYV_$X5|.2">4"
                data-component="body">
     <br>
-<p>Must be at least 6 characters. Example: <code>{;aKHTU!2</code></p>
+<p>Must be at least 6 characters. Example: <code>-V0sqCYV_$X5|.2"&gt;4</code></p>
         </div>
         </form>
 
@@ -441,7 +444,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"brenden04@example.com\"
+    \"email\": \"lang.lance@example.com\"
 }"
 </code></pre></div>
 
@@ -457,7 +460,7 @@ const headers = {
 };
 
 let body = {
-    "email": "brenden04@example.com"
+    "email": "lang.lance@example.com"
 };
 
 fetch(url, {
@@ -569,10 +572,175 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-forgot-password"
-               value="brenden04@example.com"
+               value="lang.lance@example.com"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>brenden04@example.com</code></p>
+<p>Must be a valid email address. Example: <code>lang.lance@example.com</code></p>
+        </div>
+        </form>
+
+                    <h2 id="endpoints-POSTapi-admin-login">POST api/admin/login</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-admin-login">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/admin/login" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"email\": \"blarson@example.com\",
+    \"password\": \"\\\\Qp[dJsa81c:\\\\!s)\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/admin/login"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "email": "blarson@example.com",
+    "password": "\\Qp[dJsa81c:\\!s)"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-admin-login">
+            <blockquote>
+            <p>Example response (422):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 56
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;These credentials do not match our records.&quot;,
+    &quot;errors&quot;: {
+        &quot;email&quot;: [
+            &quot;These credentials do not match our records.&quot;
+        ]
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-admin-login" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-admin-login"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-admin-login"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-admin-login" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-admin-login">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-admin-login" data-method="POST"
+      data-path="api/admin/login"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-admin-login', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-admin-login"
+                    onclick="tryItOut('POSTapi-admin-login');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-admin-login"
+                    onclick="cancelTryOut('POSTapi-admin-login');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-admin-login"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/admin/login</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-admin-login"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-admin-login"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="email"                data-endpoint="POSTapi-admin-login"
+               value="blarson@example.com"
+               data-component="body">
+    <br>
+<p>Example: <code>blarson@example.com</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="password"                data-endpoint="POSTapi-admin-login"
+               value="\Qp[dJsa81c:\!s)"
+               data-component="body">
+    <br>
+<p>Example: <code>\Qp[dJsa81c:\!s)</code></p>
         </div>
         </form>
 
